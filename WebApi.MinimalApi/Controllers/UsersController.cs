@@ -98,4 +98,12 @@ public class UsersController : Controller
         return NoContent();
 
     }
+    
+    [HttpOptions]
+    [Route("")]
+    public IActionResult GetOptions()
+    {
+        Response.Headers.Add("Allow", "GET, POST, OPTIONS");
+        return Ok();
+    }
 }
